@@ -1,0 +1,89 @@
+{% extends "Site/layout.html" %}
+{% load static %}
+
+
+
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'Site/classes.css' %}">
+{% endblock %}
+
+
+
+
+{% block main %}
+
+
+<main>
+    <section id="our-classes">
+        <h2 id="top">Our Classes</h2>
+        <div class="two-autocol-row">
+            <div class="two-col-row">
+                <img src="{% static 'resources/images/classes_02.jpeg' %}" alt="">
+                <img src="{% static 'resources/images/classes_03.jpeg' %}" alt="">
+            </div>
+            <div class="pars-div">
+                <p>In our interactive classes our teachers create an atmosphere where artists are free to create without inhibitions. Every student is guided on their own journey with art. Subject and medium is the choice of the artist.</p>
+                <p>Whether you are an experienced artist, looking for a community of like-minded people to share ideas and inspiration, or if you've never even touched a brush or pencil, our teachers can guide you to build your skills, hone your craft, and bring your art alive.</p>
+                <p>We offer art classes for children and adults, no one is too old or too young to be creative. We also offer craft classes for the younger students.</p>
+                <p>All of our teachers can aid a student with drawing and painting, in addition, we have teachers who excel at realism, oils, acrylics, and various drawing mediums like pastels, pencils, and ink.</p>
+                <p> <a href="{% url 'join' %}" class="button-a button-a-frame">Join Now</a> </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="class-times-prices">
+        <h2>Class Times and Pricing</h2>
+        <div class="two-autocol-row">
+            <div class="two-col-row">
+                <img src="{% static 'resources/images/classes_04.jpeg' %}" alt="">
+                <img src="{% static 'resources/images/classes_01.jpeg' %}" alt="">
+            </div>
+            <ul class="pars-div">
+                <h3>Class Times</h3>
+                <li> <strong>Adults: </strong> Weekday Mornings 09:00 - 12:00</li>
+                <li> <strong>Adults: </strong> Alternate Saturday Mornings 09:00 - 12:00</li>
+                <li> <strong>Children: </strong> Weekday Afternoons 14:00 - 17:00</li>
+                <li> <strong>Children: </strong> Alternate Saturday Afternoons 13:30 - 16:30</li>
+                <h3>Class Pricing</h3>
+                <li> <strong>Weekday Classes: </strong> R880 per month (one 3 hour class per week)</li>
+                <li> <strong>Alternate Saturday Classes: </strong> R685 per month (one class every alternate week)</li>
+                <li> <strong>Kids Craft Classes: </strong> R790 per month (one 2 hour class per week)</li>
+                <li> <a href="{% url 'join' %}" class="button-a button-a-frame">Join Now</a> </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="teachers">
+        <h2>Meet Our Teachers</h2>
+
+        <div class="grid-3-3">
+        {% for t in teachers %}
+            <div class="teacher-card">
+                <div class="teacher-card-img">
+                {% if t.photo_size == 'width' %}
+                    <img src="{% static t.photo %}" alt="{{t.photo}}" style="width: 20rem; height: auto;">
+                {% else %}
+                    <img src="{% static t.photo %}" alt="{{t.photo}}" style="width: auto; height: 20rem;">
+                {% endif %}
+                </div>
+                <h3>{{t.artist}}</h3>
+                <div class="pars-div">
+                    <p>
+                        <i class="fa-solid fa-quote-left"></i>
+                        {{t.quote}}
+                        <i class="fa-solid fa-quote-right"></i>
+                        <em>{{t.quote_author}}</em>
+                    </p>
+                    <p>I have been a teacher at Art Alive since {{t.started}}</p>
+                </div>
+                <a href="{% url 'teacher_profile' t.artist.id %}" class="button-a button-a-frame">More About Me</a>
+            </div>
+        {% endfor %}
+        </div>
+    </section>
+</main>
+
+
+{% endblock %}
+

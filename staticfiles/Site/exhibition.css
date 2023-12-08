@@ -1,0 +1,164 @@
+@import url("main.css");
+
+
+/* GENERAL */
+
+:root {
+    --gallery-image-size: 16rem;
+    
+    @media screen and (max-width: 425px) {
+        --gallery-image-size: 8rem;
+    }
+}
+
+/* ABOUT EXHIBITION */
+
+#about-exhibition .two-autocol-row {
+    @media screen and (max-width: 425px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+#about-exhibition img {
+    max-width: 40rem;
+
+    @media screen and (max-width: 425px) {
+        width: 100%;
+    }
+}
+
+#about-exhibition .pars-div p {
+    max-width: 50ch;
+}
+
+#about-exhibition .pars-div > .flex-row-center {
+    margin-top: 1rem;
+    gap: var(--gap-100);
+}
+
+
+
+
+/* EXHIBITION SHOWCASE */
+
+#exhibition-showcase {
+    margin: 0;
+    background-color: var(--clr-accent-l);
+
+    @media screen and (max-width: 425px) {
+        padding: 0;
+    }
+}
+
+#gallery {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--gap-200);
+    
+    @media screen and (max-width: 425px) {
+        padding: 0;
+        width: 100%;
+    }
+}
+
+.painting {
+    width: fit-content;
+    height: var(--gallery-image-size);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border: 0.15em solid var(--clr-accent-d);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    box-shadow: none;
+    transition: box-shadow var(--transition-time);
+}
+    .painting:hover {
+        cursor: pointer;
+        box-shadow: var(--image-box-shadow);
+    }
+
+.painting-blurb {
+    width: 100%;
+    height: var(--gallery-image-size);
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 5;
+}
+
+.painting-blurb i, .painting-blurb p {
+    padding: 0.3em;
+    color: var(--clr-main-l);
+    background-color: var(--clr-accent-d);
+    border-radius: 0.2em;
+}
+
+
+
+
+/* PAINTING VIEW */
+
+#painting-view {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    box-sizing: border-box;
+    background-color: #000000dd;
+    z-index: 6;
+}
+
+#painting-view * {
+    margin: 0;
+    padding: 0;
+    color: var(--clr-main-l);
+    font-size: var(--fs-400);
+}
+
+#painting-view h4 {
+    font-size: var(--fs-500);
+}
+
+#painting-view i {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: var(--fs-800);
+    transition: color var(--transition-time);
+}
+    #painting-view i:hover {
+        cursor: pointer;
+        color: var(--clr-accent-l);
+    }
+
+#view-painting-image {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#view-painting-image img {
+    max-width: 40rem;
+    max-height: 28rem;
+
+    @media screen and (max-width: 425px) {
+        max-width: 100%;
+        height: auto;
+    }
+}

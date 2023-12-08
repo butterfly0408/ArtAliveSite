@@ -1,0 +1,154 @@
+{% extends "Site/layout.html" %}
+{% load static %}
+
+
+
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'Site/index.css' %}">
+{% endblock %}
+
+
+
+
+{% block hero %}
+
+
+<div class="hero">
+    <img id="hero-img" class="radius-shadow-image" src="{% static 'resources/images/paintbrushes_01.jpeg' %}" alt="">
+    <div id="hero-blurb">
+        <h1>Keeping Art Alive</h1>
+        <p>We keep art alive with our interactive art classes and years of knowledge and experience to share. Experience the immersion of art at our annual exhibition.</p>
+        <div class="button-div">
+            <a class="button-a button-a-frame" href="{% url 'classes' %}">Our Classes</a>
+            <a class="button-a button-a-frame" href="{% url 'exhibition' %}">Our Exhibition</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+
+
+{% block main %}
+
+
+<main>
+
+    <section id="classes">
+        <h2>Art Classes</h2>
+
+        <div class="three-col-row">
+            <div class="card">
+                <div class="icon-div">
+                    <i class="fa-solid fa-paintbrush"></i>
+                </div>
+                <h4>Mediums</h4>
+                <p>For the painter we teach Oil, Acrylics, and Watercolors. For the sketcher we teach Pencils, Pastels, Charcoal, and Ink Pen.</p>
+                <div class="button-div">
+                    <a class="button-a button-a-frame" href="{% url 'exhibition' %}#showcase">Artwork Showcase</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon-div">
+                    <i class="fa-solid fa-user-group"></i>
+                </div>
+                <h4>Teachers</h4>
+                <p>Art Alive has 9 teachers with various qualifications and years of experience.</p>
+                <div class="button-div">
+                    <a class="button-a button-a-frame" href="{% url 'classes' %}#teachers">Meet Our Teachers</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon-div">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <h4>Availability & Class Times</h4>
+                <p>We have morning and afternoon classes, Mondays to Saturdays, with various teachers for children and adults.</p>
+                <div class="button-div">
+                    <a class="button-a button-a-frame" href="{% url 'classes' %}">Our Classes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits">
+        <img class="radius-shadow-image" src="{% static 'resources/images/painting_01.jpeg' %}" alt="">
+        
+        <div class="card">
+            <h4>The Benefits of Art</h4>
+            <p>The relaxing practice of art can have many cognitive benefits. Our students have reported the following:</p>
+            <ul>
+                <li>increased concentration</li>
+                <li>problem solving skills</li>
+                <li>better self-esteem</li>
+                <li>self-expression</li>
+                <li>personal growth</li>
+                <li>appreciation of art</li>
+                <li>using talent to its full potential</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="exhibition">
+        <h2>Art Exhibition</h2>
+
+        <div class="three-col-row">
+            <div class="card">
+                <div class="icon-div">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+                <p>Our annual winter exhibition affords great opportunity to teachers and students for showcasing their work to the public.</p>
+                <!-- <p>Enjoy creative pieces of art while sipping wine and eating hearty home-made food. Warm yourself by the bonfires, or with a glass of sherry.</p> -->
+                <div class="button-div">
+                    <a class="button-a button-a-frame" href="{% url 'exhibition' %}">Find out More</a>
+                </div>
+            </div>
+
+            <img class="radius-shadow-image" src="{% static 'resources/images/gallery_01.jpeg' %}" alt="">
+            
+            <img class="radius-shadow-image" src="{% static 'resources/images/gallery_02.jpeg' %}" alt="">
+        </div>
+    </section>
+
+    <section id="contact-form">
+        <h2>Contact Art Alive</h2>
+
+        <form action="">
+            <div class="grid-1-3">
+                <div class="flex-column">
+                    <label for="">Name</label>
+                    <input type="text" name="" id="" placeholder="Name" required>
+                </div>
+                <div class="flex-column">
+                    <label for="">Email</label>
+                    <input type="email" name="" id="" placeholder="Email" required>
+                </div>
+                <div class="flex-column">
+                    <label for="">Phone</label>
+                    <input type="tel" name="" id="" placeholder="Phone">
+                </div>
+            </div>
+            <div class="flex-column">
+                <label for="">Message</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+{% block script %}
+<script src="{% static 'javascript/contact.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'Site/layout.html' %}
+{% load static %}
+
+
+
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'Site/contact.css' %}">
+{% endblock %}
+
+
+
+
+{% block main %}
+
+
+<section id="contact">
+    <h2>Contact Art Alive</h2>
+
+    <div class="two-col-row" >
+        <p>Call us on <i class="fa-solid fa-phone"></i> 084 581 6340</p>
+        <p>Email us at <i class="fa-solid fa-envelope"></i> <a class="decorated-link hover-200" href="mailto:elaine@artalive.co.za" target="_blank">elaine@artalive.co.za</a></p>
+        <p>Find us on <i class="fa-brands fa-square-facebook"></i> <a class="decorated-link hover-200" href="https://www.facebook.com/artaliveartschool" target="_blank">Facebook</a></p>
+        <p>Follow us on <i class="fa-brands fa-instagram"></i> <a class="decorated-link hover-200" href="https://instagram.com/art_alive_art_school" target="_blank">Instagram</a></p>
+    </div>
+
+    <form id="contact-form">
+        <div class="three-col-row">
+            <div class="flex-column">
+                <label for="">Name</label>
+                <input type="text" name="name" placeholder="Name" required>
+            </div>
+            <div class="flex-column">
+                <label for="">Email</label>
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="flex-column">
+                <label for="">Phone</label>
+                <input type="tel" name="phone" placeholder="Phone">
+            </div>
+        </div>
+        <div class="flex-column">
+            <label for="">Message</label>
+            <textarea name="message" cols="30" rows="10"></textarea>
+        </div>
+
+        <p id="contact-message">Thank you for your message, you'll hear form us soon.</p>
+
+        <input type="submit" value="Send Message">
+    </form>
+</section>
+
+
+<!-- <section id="mail-list">
+    <h2>Join Our Mailing Lists</h2>
+    
+    <form id="subscription-form">
+        {% csrf_token %}
+
+        <div class="two-col-row">
+            <div class="flex-column">
+                <label for="">Name</label>
+                <input type="text" name="name" id="" placeholder="Name" required>
+            </div>
+            <div class="flex-column">
+                <label for="">Email</label>
+                <input type="email" name="email" id="" placeholder="Email" required>
+            </div>
+        </div>
+
+        <div class="flex-column">
+            <div class="checkbox-group">
+                <input type="checkbox" name="events" id=""> <label for=""> Get notified about events.</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" name="newsletter" id=""> <label for=""> Subscribe to our newsletter.</label>
+            </div>
+        </div>
+
+        <p id="subscribe-message">Thank you for joining our mailing list, you'll hear form us soon.</p>
+
+        <input type="submit" value="Sign Up">
+    </form>
+</section> -->
+
+
+{% endblock %}
+
+
+
+{% block script %}
+<script src="{% static 'javascript/contact.js' %}"></script>
+<!-- <script src="{% static 'javascript/subscribe.js' %}"></script> -->
+{% endblock %}

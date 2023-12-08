@@ -1,0 +1,70 @@
+{% extends "Site/layout.html" %}
+{% load static %}
+
+
+
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'Site/exhibition.css' %}">
+{% endblock %}
+
+
+
+
+{% block main %}
+
+
+<main>
+
+    <section id="about-exhibition">
+        <h2>Our Annual Art Exhibition</h2>
+
+        <div class="two-autocol-row">
+            <img class="radius-shadow-image" src="{% static 'resources/images/gallery_01.jpeg' %}" alt="">
+
+            <div class="pars-div">
+                <p>We are excited to host our annual Art Exhibition in the heart of winter.</p>
+                <p>Over the course of four evenings visitors can immerse themselves in the creative art work of our students over the past year. This event gives a great opportunity to our students and teachers to show and sell their work to the public.</p>
+                <p>Enjoy sherry, wine and hearty home-made food. Bonfires and music create the perfect atmosphere for an evening out.</p>
+                <p>Be sure to visit us to take your evening from the ordinary to the extraordinary.</p>
+<!-- 
+                <div class="button-div">
+                    <a class="button-a button-a-frame" href="{% url 'contact' %}#mail-list">Newsletter Signup</a>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="showcase">
+        <h2>Artwork Showcase</h2>
+
+        <div id="gallery">
+            {% for p in paintings %}
+            <div class="painting" data-id="{{p.id}}">
+                <img class="painting-image height" src="{% static p.image %}" alt="{{p.artist}}" data-id="{{p.id}}">
+                <div class="painting-blurb" data-id="{{p.id}}">
+                    <i class="fa-solid fa-hand-pointer" data-id="{{p.id}}"></i>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+
+    <div id="painting-view">
+        <i class="fa-solid fa-circle-xmark"></i>
+        <div id="view-painting-image"></div>
+        <p id="artist_email"></p>
+    </div>
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+{% block script %}
+<script src="{% static 'javascript/view_painting.js' %}"></script>
+{% endblock %}

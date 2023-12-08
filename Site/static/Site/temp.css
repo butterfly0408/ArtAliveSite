@@ -1,0 +1,11 @@
+body {
+    background-color: red;
+
+    @media screen and (max-width: 425px) {
+        background-color: blue;
+    }
+}
+
+header, footer {
+    background-color: white;
+}

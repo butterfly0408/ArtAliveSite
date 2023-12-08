@@ -1,0 +1,121 @@
+@import url("main.04f9a6aaa27d.css");
+
+
+/* OUR CLASSES */
+
+#our-classes .two-autocol-row {
+    gap: var(--gap-400);
+
+    @media screen and (max-width: 425px) {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+}
+
+#our-classes img {
+    max-height: 22rem;
+    justify-self: end;
+    border-radius: 0.6rem;
+    box-sizing: border-box;
+    box-shadow: var(--image-box-shadow);
+
+    @media screen and (max-width: 425px) {
+        max-height: 12rem;
+    }
+}
+
+
+
+
+/* CLASS TIMES AND PRICES */
+
+#class-times-prices {
+    background-color: var(--clr-accent-l);
+}
+
+#class-times-prices .two-autocol-row {
+    gap: var(--gap-400);
+
+    @media screen and (max-width: 425px) {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+}
+
+#class-times-prices img {
+    max-height: 22rem;
+    justify-self: end;
+    box-sizing: border-box;
+    border-radius: 0.6rem;
+    box-shadow: var(--image-box-shadow);
+
+    @media screen and (max-width: 425px) {
+        max-height: 12rem;
+    }
+}
+
+#class-times-prices ul h3:last-of-type {
+    margin-top: 0.5em;
+}
+
+#class-times-prices .pars-div li {
+    font-size: var(--fs-400);
+}
+
+
+
+
+/* MEET OUR TEACHERS */
+
+#teachers .grid-3-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 25rem);
+    gap: var(--gap-400);
+
+    @media screen and (max-width: 425px) {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+}
+
+#teachers .teacher-card {
+    /* max-width: fit-content; */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    box-sizing: content-box;
+    box-shadow: var(--card-box-shadow);
+}
+
+#teachers .teacher-card-img {
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 0.6rem;
+
+    @media screen and (max-width: 425px) {
+        width: 18rem;
+        height: auto;
+    }
+}
+
+#teachers .teacher-card h3 {
+    font-size: var(--fs-500);
+}
+
+#teachers .pars-div {
+    max-width: fit-content;
+}
+
+#teachers .teacher-card :is(p, .button-a) {
+    max-width: 20rem;
+    font-size: var(--fs-300);
+}
+

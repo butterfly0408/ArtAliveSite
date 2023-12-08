@@ -1,0 +1,189 @@
+{% extends 'Site/layout.html' %}
+{% load static %}
+
+
+
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'Site/join.css' %}">
+{% endblock %}
+
+
+
+
+{% block main %}
+
+
+<section id="join">
+    <h2>Join Art Alive Art School Today</h2>
+    <p id="pdf-form">Download our <a href="{% static 'resources/application_form.pdf' %}" target="_blank">application form</a> and email it to <a href="mailto:elaine@artalive.co.za" target="_blank">elaine@artalive.co.za</a>. <br> Or fill it out and submit it online below:</p>
+
+    <p>{{message}}</p>
+
+    <form action="{% url 'join_form' %}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+
+        <h3>Art Alive Art School Application Form</h3>
+
+        <fieldset class="flex-column">
+            <legend>Art Student Enrolling</legend>
+
+            <div class="two-col-row">
+                <label for="">Name and surname</label>
+                <input type="text" name="name_surname" placeholder="Name and surname" required>
+            </div>
+            <div class="two-col-row">
+                <label for="">Contact number of student</label>
+                <input type="tel" name="contact_no" placeholder="Contact number" required>
+            </div>
+            <div class="two-col-row">
+                <label for="">Date of birth:</label>
+                <input type="date" name="dob" required>
+            </div>
+            <div class="two-col-row">
+                <label for="">Previous art schools attended</label>
+                <div class="flex-column">
+                    <input type="text" name="school1" placeholder="School 1">
+                    <input type="text" name="school2" placeholder="School 2">
+                    <input type="text" name="school3" placeholder="School 3">
+                </div>
+            </div>
+            <div class="two-col-row">
+                <label for="">Preferred day of the week to attend class</label>
+                <div class="flex-column">
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="monday">  <label for="">Monday</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="tuesday">  <label for="">Tuesday</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="wednesday">  <label for="">Wednesday</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="thursday">  <label for="">Thursday</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="friday">  <label for="">Friday</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="saturday">  <label for="">Saturday</label>
+                    </div>
+                </div>
+            </div>
+            <div class="two-col-row">
+                <label for="">Desired date of first class</label>
+                <input type="date" name="first_date" required>
+            </div>
+        </fieldset>
+
+        <fieldset class="flex-column">
+            <legend>Parent / Guardian information in case of students under 18</legend>
+            
+            <div class="two-col-row">
+                <label for="">Parent / Guardian 1</label>
+                <div class="flex-row">
+                    <input type="text" name="p1name" placeholder="Name">
+                    <input type="text" name="p1contact" placeholder="Contact number">
+                </div>
+            </div>
+            <div class="two-col-row">
+                <label for="">Parent / Guardian 2</label>
+                <div class="flex-row">
+                    <input type="text" name="p2name" placeholder="Name">
+                    <input type="text" name="p2contact" placeholder="Contact number">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="flex-column">
+            <legend>Person responsible for payment</legend>
+
+            <div class="flex-column">
+                <label for="">ID number of person responsible for account</label>
+                <input type="number" name="idno" required>
+            </div>
+            <div class="flex-column">
+                <label for="">Copy of ID</label>
+                <input type="file" name="id_copy" accept="image/*" required>
+            </div>
+            <div class="flex-column">
+                <label for="">Email address for monthly statements</label>
+                <input type="email" name="email" placeholder="email@example.com" required>
+            </div>
+        </fieldset>
+
+        <fieldset class="flex-column">
+            <legend>Terms and Conditions</legend>
+
+            <p>Before signing, please read our Terms and Conditions.</p>
+            <ul class="flex-column">
+                <li>
+                    Fees must be paid in advance by the 3rd of each month.
+                    <input type="text" name="initial1" placeholder="Initials" required>
+                </li>
+
+                <li>
+                    One calendar month’s notice is to terminate a contract with Art Alive.
+                    <input type="text" name="initial2" placeholder="Initials" required>
+                </li>
+
+                <li>
+                    Fees are due even if you cannot attend a class, as your space is reserved in the studio. 
+                    <input type="text" name="initial3" placeholder="Initials" required>
+                </li>
+                
+                <li>Should a student be unable to attend a class, catch-up classes may be arranged with the teacher. catch-up classes expire at the end of a notice month.</li>
+
+                <li>During the week of our annual art exhibition (end of July) there are no classes and communication will be sent.</li>
+
+                <li>Friends or siblings accompanying an art student may do so once at the following fees: <br> 
+                    Weekday classes R220 per class <br> 
+                    Saturday classes R342 per class <br> 
+                    Weekday Craft classes  R198 per class
+                </li>
+
+                <li>
+                    Class fees 2024: <br>
+                    Class fees for weekdays are R880.00 <br>
+                    Class fees for Saturdays are R685.00 <br>
+                    Class fees for craft classes are R790.00
+                </li>
+            </ul>
+            
+            <p>I, the Artist or Parent/Guardian of the Artist, agree that I will give one calendar month's notice with my last payment should I wish to discontinue classes at Art Alive Art School. All art materials and class fees will be settled before the last class commences. I have read and agree with the terms and conditions as set out above, and I am aware that this is a legally binding agreement. I understand that I will be held responsible for legal costs if the account is handed over for debt collecting purposes. </p>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" required>
+                <label for="">I have read and agree to the Terms and Conditions</label> 
+            </div>
+            <div class="two-col-row">
+                <label for="">Signature of person responsible for account:</label>
+                <input type="file" name="signature" accept="image/*" required>
+            </div>
+            <div class="two-col-row">
+                <label for="">Full names:</label>
+                <input type="text" name="signedname" placeholder="Full Names" required>
+            </div>
+            <div class="two-col-row">
+                <label for="">Date:</label>
+                <input type="date" name="signeddate" required>
+            </div>
+        </fieldset>
+
+        <fieldset class="flex-column">
+            <legend>Banking Details for Accounts</legend>
+
+            <p>Alive Art</p>
+            <p>Account Number: 420186476</p>
+            <p>Standard Bank</p>
+            <p>Branch Number: 013042</p>
+        </fieldset>
+        
+        <input id="submit-join" type="submit" value="Submit">
+    </form>
+</section>
+
+
+{% endblock %}
+

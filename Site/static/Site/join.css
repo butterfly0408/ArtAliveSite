@@ -1,0 +1,52 @@
+@import url("main.css");
+
+
+/* JOIN */
+
+#join {
+    background-color: var(--clr-main-l);
+    margin-bottom: 0;
+}
+
+#pdf-form, #pdf-form * {
+    font-size: var(--fs-500);
+}
+
+#join a {
+    text-decoration: underline;
+}
+    #join a:hover {
+        color: var(--clr-accent-m);
+    }
+
+
+#join form {
+    gap: var(--gap-400);
+}
+
+#join .two-col-row {
+    @media screen and (max-width: 425px) {
+        grid-template-columns: 1fr;
+        gap: var(--gap-100);
+    }
+}
+
+#join fieldset .flex-row {
+    flex-direction: column;
+}
+
+#join form fieldset {
+    gap: var(--gap-200);
+}
+
+#join fieldset :is(.flex-column, .flex-row)  {
+    gap: var(--gap-100);
+}
+
+#join form .checkbox-group {
+    @media screen and (max-width: 425px) {
+        display: flex;
+        justify-content: left;
+        gap: var(--gap-100);
+    }
+}

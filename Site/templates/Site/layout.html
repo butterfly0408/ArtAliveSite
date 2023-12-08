@@ -1,0 +1,182 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="shortcut icon" href="{% static 'resources/favicon.png' %}" type="image/x-icon">
+        <title>Art Alive {% block title %}{% endblock %}</title>
+
+        <script src="https://kit.fontawesome.com/87fd4735c1.js" crossorigin="anonymous"></script>
+
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A=="crossorigin="anonymous"></script>  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Allura&family=Josefin+Sans&family=Noto+Sans+Display&family=Tenor+Sans&display=swap" rel="stylesheet">
+        
+        {% block style %}{% endblock %}
+        <link rel="stylesheet" href="{% static 'Site/main.css' %}">
+
+    </head>
+
+
+    <body>
+
+        <header>
+            <nav id="top">
+                <div class="nav-top">
+                    <a href="mailto:elaine@artalive.co.za" target="_blank">elaine@artalive.co.za</a>
+                    <p>084 581 6340</p>
+                </div>
+                <div class="nav-main">
+                    <a href="{% url 'index' %}"> <img class="logo" src="{% static 'resources/logo.png' %}"> </a>
+                    <ul class="nav-links">
+                        <li> <a class="nav-link" href="{% url 'index' %}">Home</a> </li>
+                        <li><div class="nav-seperator"></div></li>
+                        <li> <a class="nav-link" href="{% url 'about' %}">About</a> </li>
+                        <li><div class="nav-seperator"></div></li>
+                        <li id="classes-dropdown"> <a class="nav-link" href="{% url 'classes' %}">Classes +</a> 
+                            <ul class="classes-submenu">
+                                <li> <a href="{% url 'classes' %}#our-classes">Classes</a> </li>
+                                <li> <a href="{% url 'classes' %}#class-times-prices">Times & Prices</a> </li>
+                                <li> <a href="{% url 'classes' %}#teachers">Teachers</a> </li>
+                            </ul>
+                        </li>
+                        <li><div class="nav-seperator"></div></li>
+                        <li> <a class="nav-link" href="{% url 'exhibition' %}">Exhibition</a> </li>
+                        <!-- <li><div class="nav-seperator"></div></li>
+                        <li> <a class="nav-link" href="{% url 'news_events' %}">News & Events</a> </li> -->
+                        <ul class="nav-ctas">
+                            <li> <a class="button-a button-a-fill" href="{% url 'join' %}">Join Now</a> </li>
+                            <li> <a class="button-a button-a-fill" href="{% url 'contact' %}">Contact</a> </li>
+                        </ul>
+                    </ul>
+
+
+                    <i id="hamburger-menu" class="fa-solid fa-bars"></i>
+                    <ul id="mobile-menu">
+                        <li> <a class="nav-link" href="{% url 'index' %}">Home</a> </li>
+                        <li> <a class="nav-link" href="{% url 'about' %}">About</a> </li>
+                        <li> <a class="nav-link" href="{% url 'classes' %}#our-classes">Classes</a> </li>
+                        <li> <a class="nav-link" href="{% url 'classes' %}#class-times-prices">Times & Prices</a> </li>
+                        <li> <a class="nav-link" href="{% url 'classes' %}#teachers">Teachers</a> </li>
+                        <li> <a class="nav-link" href="{% url 'exhibition' %}">Exhibition</a> </li>
+                        <!-- <li> <a class="nav-link" href="{% url 'news_events' %}">News & Events</a> </li> -->
+                        <li> <a class="button-a button-a-fill" href="{% url 'join' %}">Join Now</a> </li>
+                        <li> <a class="button-a button-a-fill" href="{% url 'contact' %}">Contact</a> </li>
+                        <li id="close-mobile"> <i class="fa-solid fa-circle-xmark"></i> CLOSE</li>
+                    </ul>
+                </div>
+            </nav> 
+            
+            
+            {% block hero %}{% endblock %}
+        </header>
+
+
+        <div id="mini-nav">
+            <div class="flex-row-between">
+                <div class="flex-row-center">
+                    <a href="{% url 'index' %}"> <img class="logo" src="{% static 'resources/mini_logo.png' %}"> </a>
+                    <a href="mailto:elaine@artalive.co.za" target="_blank">elaine@artalive.co.za</a>
+                    <p>084 581 6340</p>
+                </div>
+                <ul>
+                    <li> <a class="nav-link" href="{% url 'index' %}">Home</a> </li>
+                    <li><div class="nav-seperator"></div></li>
+                    <li> <a class="nav-link" href="{% url 'about' %}">About</a> </li>
+                    <li><div class="nav-seperator"></div></li>
+                    <li id="mini-classes-dropdown"> <a class="nav-link" href="{% url 'classes' %}">Classes +</a> 
+                        <ul class="classes-submenu">
+                            <li><a href="{% url 'classes' %}#our-classes">Classes</a></li>
+                            <li><a href="{% url 'classes' %}#class-times-prices">Times & Prices</a></li>
+                            <li><a href="{% url 'classes' %}#teachers">Teachers</a></li>
+                        </ul>
+                    </li>
+                    <li><div class="nav-seperator"></div></li>
+                    <li> <a class="nav-link" href="{% url 'exhibition' %}">Exhibition</a> </li>
+                    <!-- <li><div class="nav-seperator"></div></li>
+                    <li> <a class="nav-link" href="{% url 'news_events' %}">News & Events</a> </li> -->
+                    <ul class="nav-ctas">
+                        <li> <a class="button-a button-a-fill" href="{% url 'join' %}">Join Now</a> </li>
+                        <li> <a class="button-a button-a-fill" href="{% url 'contact' %}">Contact</a> </li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+
+        
+        {% block main %}{% endblock %}
+
+        <div id="back-to-top">
+            <a href="#top"> <i class="fa-solid fa-circle-arrow-up"></i> </a>
+        </div>
+
+ 
+        <footer>
+            <div class="footer-main">
+                <div class="footer-company">
+                    <img class="logo" src="{% static 'resources/logo.png' %}" alt="">
+                    <p>We keep art alive with hands-on classes and warm, homey exhibitions.</p>
+                </div>
+    
+                <div class="footer-browse">
+                    <h6>Browse</h6>
+                    <ul>
+                        <li> <a href="{% url 'index' %}">Home</a> </li>
+                        <li> <a href="{% url 'about' %}">About</a> </li>
+                        <li> <a href="{% url 'classes' %}">Classes</a> </li>
+                        <li> <a href="{% url 'exhibition' %}">Exhibition</a> </li>
+                    </ul>
+                </div>
+    
+                <div class="footer-services">
+                    <h6>Art Alive Art School</h6>
+                    <ul>
+                        <li> <a href="{% url 'exhibition' %}#showcase">Artwork Showcase</a> </li>
+                        <li> <a href="{% url 'join' %}">Join Now</a> </li>
+                        <li> <a href="{% url 'contact' %}">Contact Us</a> </li>
+                        <!-- <li> <a href="{% url 'contact' %}#mail-list">Subscribe to Emails</a> </li> -->
+                    </ul>
+                </div>
+    
+                <div class="footer-contact">
+                    <h6>Get in Touch</h6>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <a href="https://www.google.com/maps/place/Art+Alive+Art+School/@-26.1706341,28.3185716,15z/data=!4m6!3m5!1s0x1e953d973ca851f3:0x80ff51e1e018edeb!8m2!3d-26.1706341!4d28.3185716!16s%2Fg%2F1hc5cvtf7?entry=ttu" target="_blank">56 11th Ave Northmead Benoni</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:elaine@artalive.co.za" target="_blank">elaine@artalive.co.za</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <p>084 581 6340</p>
+                        </li>
+                        <li class="social-links">
+                            <a href="https://www.facebook.com/artaliveartschool" target="_blank"> <i class="fa-brands fa-square-facebook"></i> </a>
+                            <a href="https://instagram.com/art_alive_art_school" target="_blank"> <i class="fa-brands fa-instagram"></i> </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p> <i class="fa-regular fa-copyright"></i> Copyright Art Alive Art School 2023</p>
+                <a class="decorated_link" href="{% url 'privacy_policy' %}">Privacy Policy</a>
+                <!-- <p>Website Designed by <a href=""></a></p> -->
+            </div>
+        </footer>
+        
+    </body>
+
+    {% block script %}{% endblock %}
+    <script src="{% static 'javascript/main.js' %}"></script>
+    
+</html>

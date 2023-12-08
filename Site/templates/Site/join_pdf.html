@@ -1,0 +1,150 @@
+{% load static %}
+
+
+<html>
+
+    <head>
+        <title>PDF Content</title>
+
+        <script src="https://kit.fontawesome.com/87fd4735c1.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header>
+            <div id="logo">
+                <img src="{{logo_src}}" alt="">
+            </div>
+            <p>elaine@artalive.co.za    |    084 581 6340</p>
+            <p>Facebook: Art Alive Art School    |    Instagram:  @art_alive_art_school</p>
+        </header>
+        
+        <h1>Art Alive Art School Application Form</h1>
+
+        <div class="questions">
+            <h2>Art Student Enrolling</h2>
+            <p>
+                Name and surname: <em>{{ form_data.name_surname }}</em> <br>
+                Contact number of student: <em>{{ form_data.contact_no }}</em> <br>
+                Date of birth: <em>{{ form_data.dob }}</em> <br>
+                Previous art schools attended:
+                <em>{% if form_data.school1 %} {{ form_data.school1 }} {% endif %}</em>
+                <em>{% if form_data.school2 %} | {{ form_data.school2 }} {% endif %}</em>
+                <em>{% if form_data.school3 %} | {{ form_data.school3 }} {% endif %}</em> <br>
+                Preferred day of the week to attend class:
+                <em>{% if form_data.monday == 'on' %} Monday {% endif %}</em>
+                <em>{% if form_data.tuesday == 'on' %} | Tuesday {% endif %}</em>
+                <em>{% if form_data.wednesday == 'on' %} | Wednesday {% endif %}</em>
+                <em>{% if form_data.thursday == 'on' %} | Thursday {% endif %}</em>
+                <em>{% if form_data.friday == 'on' %} | Friday {% endif %}</em>
+                <em>{% if form_data.saturday == 'on' %} | Saturday {% endif %}</em> <br>
+                Desired date of first class: <em>{{ form_data.first_date }}</em> 
+            </p>
+        </div>
+
+        <div class="questions">
+            <h2>Parent / Guardian information in case of student under 18</h2>
+            <p>
+                Parent / Guardian 1 <br>
+                Name: <em>{{ form_data.p1name }}</em> Contact number: <em>{{ form_data.p1contact }}</em> <br>
+                Parent / Guardian 2 <br>
+                Name: <em>{{ form_data.p2name }}</em> Contact number: <em>{{ form_data.p2contact }}</em> 
+            </p>
+        </div>
+
+        <div class="questions">
+            <h2>Person responsible for payment</h2>
+            <p>
+                Copy of ID provided <br>
+                ID number of person responsible for account: <em>{{ form_data.idno }}</em> <br>
+                Email address for monthly statements: <em>{{ form_data.email }}</em> <br>
+            </p>
+        </div>
+
+        <div class="questions">
+            <h2>Terms and Conditions</h2>
+            <p><strong>Before signing, please read our Terms and Conditions.</strong></p>
+            <p>
+                Fees must be paid in advance by the 3rd of each month.
+                <em>{{ form_data.initial1 }}</em> <br>
+                One calendar month’s notice is required to terminate classes with Art Alive.
+                <em>{{ form_data.initial2 }}</em> <br>
+                Fees are due even if you cannot attend a class, as your space is reserved in the studio.
+                <em>{{ form_data.initial3 }}</em> <br>
+                Should a student be unable to attend a class, Catchup classes may be arranged with the teacher. Catchup classes expire at the end of a notice month.
+                During the week of our annual art exhibition (end of July) there are no classes and communication will be sent.
+            </p> <br>
+            <p>
+                Friends or siblings accompanying an art student may do so once at the following fees: <br> 
+                Weekday classes R220 per class <br> 
+                Saturday classes R 342 per class <br> 
+                Weekday Craft classes  R 198 per class <br>
+                Class fees 2024: <br>
+                Class fees for weekdays are R880.00 <br>
+                Class fees for Saturdays are R685.00 <br>
+                Class fees for craft classes are R790.00
+            </p>
+            <p>I, the Artist or Parent/Guardian of the Artist, agree that I will give one calendar month's notice with my last payment should I wish to discontinue classes at Art Alive Art School. All art materials and class fees will be settled before the last class commences. I have read and agree with the terms and conditions as set out above, and I am aware that this is a legally binding agreement. I understand that I will be held responsible for legal costs if the account is handed over for debt collecting purposes. </p>
+            <p>Signature of person responsible for account:</p>
+            <img class="image" src="{{signature}}" alt="">
+            <p>
+                Full names: <em>{{ form_data.signedname }}</em> <br>
+                Date: <em>{{ form_data.signeddate }}</em> 
+            </p>
+        </div>
+
+        <div class="questions">
+            <h2>Banking details</h2>
+            <p>
+                Alive Art <br>
+                Account Number: 420186476 <br>
+                Standard Bank <br>
+                Branch Number: 013042
+            </p>
+        </div>
+
+    </body>
+
+
+
+    <style>
+        :root {
+            font-family: sans-serif;
+            line-height: 1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        p {
+            font-size: 16px;
+        }
+
+        img {
+            height: 50px;
+        }
+
+        .questions {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .question {
+            font-weight: 600;
+        }
+
+        em {
+            font-weight: 400;
+            text-decoration: underline;
+        }
+
+    </style>
+
+</html>

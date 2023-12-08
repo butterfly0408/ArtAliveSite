@@ -1,0 +1,56 @@
+{% extends "Site/layout.html" %}
+{% load static %}
+
+
+
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'Site/teacher_profile.css' %}">
+{% endblock %}
+
+
+
+
+{% block main %}
+
+
+<main>
+    <section id="teacher_profile">
+        <h1>{{teacher.artist.firstname}} {{teacher.artist.lastname}}</h1>
+        <div class="two-autocol-row">
+            <img src="{% static teacher.photo %}" alt="">
+            <div id="about">
+                <div class="pars-div">
+                {% for a in teacher.about %}
+                    <p>{{a}}</p>
+                {% endfor %}
+                </div>
+                <div id="class-times">
+                    <p>Class Times</p>
+                    {% if teacher.classes.Adult %}
+                    <ul>
+                        <li>Adults:</li>
+                        {% for g in teacher.classes.Adult %}
+                        <li>{{g}}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% if teacher.classes.Children %}
+                    <ul>
+                        <li>Children:</li>
+                        {% for g in teacher.classes.Children %}
+                        <li>{{g}}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                <div class="button-div">
+                    <a class="button-a button-a-frame" href="{% url 'classes' %}#teachers">Our Teachers</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+{% endblock %}
