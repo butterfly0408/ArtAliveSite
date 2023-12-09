@@ -6,7 +6,7 @@
 #our-classes .two-autocol-row {
     gap: var(--gap-400);
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 768px) {
         width: 100%;
         grid-template-columns: 1fr;
     }
@@ -19,6 +19,9 @@
     box-sizing: border-box;
     box-shadow: var(--image-box-shadow);
 
+    @media scree and (max-width: 768px) {
+        max-height: 14rem;
+    }
     @media screen and (max-width: 425px) {
         max-height: 12rem;
     }
@@ -36,7 +39,7 @@
 #class-times-prices .two-autocol-row {
     gap: var(--gap-400);
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 768px) {
         width: 100%;
         grid-template-columns: 1fr;
     }
@@ -49,6 +52,9 @@
     border-radius: 0.6rem;
     box-shadow: var(--image-box-shadow);
 
+    @media scree and (max-width: 768px) {
+        max-height: 14rem;
+    }
     @media screen and (max-width: 425px) {
         max-height: 12rem;
     }
@@ -72,7 +78,7 @@
     grid-template-columns: repeat(3, 25rem);
     gap: var(--gap-400);
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 768px) {
         width: 100%;
         grid-template-columns: 1fr;
     }
@@ -100,7 +106,7 @@
     overflow: hidden;
     border-radius: 0.6rem;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 768px) {
         width: 18rem;
         height: auto;
     }

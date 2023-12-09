@@ -3,7 +3,7 @@
 
 
 form .three-col-row, form .two-col-row {
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
         gap: var(--gap-100);
     }
@@ -19,7 +19,7 @@ form .flex-column {
 }
 
 form .checkbox-group {
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 768px) {
         display: flex;
         justify-content: left;
         gap: var(--gap-100);

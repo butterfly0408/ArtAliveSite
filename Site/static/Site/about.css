@@ -82,6 +82,10 @@ header .hero-blurb h1 {
     border-radius: 0.6rem;
     box-shadow: var(--image-box-shadow);
 
+    @media screen and (max-width: 768px) {
+        height: 13rem;
+        width: auto;
+    }
     @media screen and (max-width: 425px) {
         height: 8rem;
         width: auto;
