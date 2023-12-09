@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-l3kt)4ou8#f8p*nz_bgm8%q4os9@)qttsp+bap3w56dl@&9lb#
 DEBUG = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['154.0.170.214', 'artalive.co.za']
 
 
 # Application definition
