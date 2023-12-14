@@ -32,7 +32,7 @@
     --gap-400: 4rem;
 
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         /* FONT VARIABLES */
         --fs-900: 3rem;
         --fs-800: 1.65rem;
@@ -49,7 +49,7 @@
         --gap-200: 1rem;
         --gap-400: 2rem;
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
         /* FONT VARIABLES */
         --fs-900: 2.5rem;
         --fs-800: 1.3rem;
@@ -92,6 +92,7 @@ main {
     width: 100%;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 section {
@@ -104,11 +105,11 @@ section {
     gap: var(--gap-400);
     box-sizing: border-box;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         margin: 2rem 0;
         padding: 3rem;
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
         margin: 2rem 0;
         padding: 2rem;
     }
@@ -117,6 +118,7 @@ section {
 h1 {
     font-size: var(--fs-900);
     font-family: var(--ff-cursive);
+    text-align: center;
 }
 
 h2 {
@@ -129,7 +131,7 @@ h2 {
     border-top: 0.15rem solid var(--clr-accent-d);
     border-bottom: 0.15rem solid var(--clr-accent-d);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         width: 90%;
         padding: 1rem;
     }
@@ -184,7 +186,7 @@ a {
         background-color var(--transition-time),
         border-color var(--transition-time);
     
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         padding: 0.3em;
     }
 }
@@ -215,6 +217,10 @@ li {
     line-height: 1.2;
 }
 
+i {
+    font-size: var(--fs-400);
+}
+
 .radius-shadow-image {
     border-radius: 0.6rem;
     box-shadow: var(--image-box-shadow);
@@ -237,7 +243,7 @@ form {
     border-radius: 0.6rem;
     box-shadow: var(--card-box-shadow);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         width: 100%;
         padding: 1rem;
     }
@@ -248,7 +254,7 @@ form fieldset {
     border: solid 0.15rem var(--clr-accent-l);
     border-radius: 0.6rem;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         padding: 0.5rem;
     }
 }
@@ -257,7 +263,7 @@ form fieldset legend {
     padding: 0 1rem;
     font-size: var(--fs-500);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         padding: 0 0.25rem;
     }
 }
@@ -273,7 +279,7 @@ form input, form textarea {
     border-radius: 0.3rem;
     border: solid 0.15rem var(--clr-accent-l);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         width: 100%;
     }
 }
@@ -384,7 +390,7 @@ form input[type="submit"] {
 header {
     background-color: var(--clr-accent-l);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         padding-bottom: 0;
     }
 }
@@ -397,7 +403,7 @@ nav {
     box-sizing: border-box;
     background-color: var(--clr-accent-l);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         padding: 1rem;
     }
 }
@@ -409,12 +415,12 @@ nav {
     align-items: center;
     gap: var(--gap-100);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         padding-bottom: 0.5rem;
         justify-content: space-between;
     }
 }
-    .nav-top * {
+    .nav-top *:not(i) {
         font-size: var(--fs-300);
         transition: color var(--transition-time);
     }
@@ -433,10 +439,10 @@ nav {
 .logo {
     max-height: 5rem;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         max-height: 3.25rem;
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
         max-height: 2.5rem;
     }
 }
@@ -447,7 +453,7 @@ nav {
     align-items: center;
     gap: var(--gap-100);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         display: none;
     }
 }
@@ -545,7 +551,7 @@ nav {
     animation-fill-mode: forwards;
     background-color: var(--clr-accent-d-t);
     box-shadow: var(--card-box-shadow);
-    z-index: 2;
+    z-index: 3;
 }
 
     #mini-nav .flex-row-center {
@@ -568,6 +574,10 @@ nav {
     }
     #mini-nav .nav-ctas {
         gap: var(--gap-100);
+    }
+
+    #mini-nav i {
+        color: var(--clr-accent-l);
     }
 
     #mini-nav a:not(.button-a, a:has(img)) {
@@ -623,7 +633,7 @@ nav {
     display: none;
     font-size: var(--fs-800);
     
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         display: flex;
     }
 }
@@ -631,7 +641,7 @@ nav {
 #mobile-menu {
     display: none;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         padding: 1rem;
         position: fixed;
         top: 0;
@@ -679,7 +689,7 @@ main {
     box-shadow: var(--card-box-shadow);
     opacity: 0.5;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
         bottom: 3.5rem;
         right: 1rem;
     }
@@ -698,7 +708,7 @@ main {
 footer {
     background-color: var(--clr-accent-l);
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
         /* background-color: blue; */
     }
 }
@@ -712,7 +722,7 @@ footer {
     justify-content: space-between;
     border-bottom: 0.15rem solid var(--clr-accent-d);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         padding: 1rem;
         flex-direction: column;
         gap: var(--gap-200);
@@ -733,12 +743,12 @@ footer {
     margin-bottom: 1rem;
     font-size: var(--fs-500);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         margin-bottom: 0.5rem;
     }
 }
 
-.footer-main ul p, .footer-main ul a, .footer-main ul i {
+.footer-main ul p, .footer-main ul a {
     color: var(--clr-accent-d);
     font-size: var(--fs-400);
 }
@@ -754,11 +764,11 @@ footer {
     gap: var(--gap-100);
 }
 
-footer a, footer a i {
+footer a{
     color: var(--clr-accent-d);
     transition: color var(--transition-time);
 }
-    footer a:hover, footer a:hover i {
+    footer a:hover {
         color: var(--clr-main-l);
     }
 
@@ -771,12 +781,12 @@ footer a, footer a i {
     flex-direction: column;
     gap: var(--gap-100);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         padding: 1rem;
     }
 }
 
-.footer-bottom * {
+.footer-bottom *:not(i) {
     color: var(--clr-accent-d);
     font-size: var(--fs-300);
 }

@@ -22,7 +22,7 @@
     @media scree and (max-width: 768px) {
         max-height: 14rem;
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
         max-height: 12rem;
     }
 }
@@ -55,7 +55,7 @@
     @media scree and (max-width: 768px) {
         max-height: 14rem;
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
         max-height: 12rem;
     }
 }
@@ -105,6 +105,7 @@
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 0.6rem;
+    background-color: red;
 
     @media screen and (max-width: 768px) {
         width: 18rem;

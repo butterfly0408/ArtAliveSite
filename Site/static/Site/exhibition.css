@@ -6,10 +6,10 @@
 :root {
     --gallery-image-size: 16rem;
     
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         --gallery-image-size: 12rem;
     }
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
         --gallery-image-size: 8rem;
     }
 }
@@ -17,7 +17,7 @@
 /* ABOUT EXHIBITION */
 
 #about-exhibition .two-autocol-row {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         grid-template-columns: 1fr;
     }
 }
@@ -25,7 +25,7 @@
 #about-exhibition img {
     max-width: 40rem;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         width: 100%;
     }
 }
@@ -48,7 +48,7 @@
     margin: 0;
     background-color: var(--clr-accent-l);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         padding: 0;
     }
 }
@@ -61,14 +61,14 @@
     flex-wrap: wrap;
     gap: var(--gap-200);
     
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         padding: 0;
-        width: 100%;
+        width: fit-content;
     }
 }
 
 .painting {
-    width: fit-content;
+    max-width: fit-content;
     height: var(--gallery-image-size);
     display: flex;
     justify-content: center;
@@ -76,13 +76,10 @@
     border: 0.15em solid var(--clr-accent-d);
     border-radius: 0.6rem;
     overflow: hidden;
-    box-shadow: none;
+    /* box-shadow: none; */
     transition: box-shadow var(--transition-time);
+    box-shadow: var(--image-box-shadow);
 }
-    .painting:hover {
-        cursor: pointer;
-        box-shadow: var(--image-box-shadow);
-    }
 
 .painting-blurb {
     width: 100%;
@@ -160,7 +157,7 @@
     max-width: 40rem;
     max-height: 28rem;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
         max-width: 100%;
         height: auto;
     }

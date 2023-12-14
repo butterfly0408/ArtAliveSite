@@ -56,7 +56,7 @@ def classes(request):
 
 
 def exhibition(request):
-
+    
     paintings = Artwork.objects.all()
 
     return render(request, "Site/exhibition.html", {

@@ -62,7 +62,7 @@
     box-sizing: border-box;
     box-shadow: var(--card-box-shadow);
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 426px) {
         width: 100%;
         padding: 1rem;
     }
@@ -84,6 +84,10 @@
 
 header {
     padding-bottom: 4rem;
+
+    @media screen and (max-width: 769px) {
+        padding-bottom: 0;
+    }
 }
 
 
@@ -99,7 +103,7 @@ header {
 #hero-img {
     max-width: 1000px;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         max-width: 100%;
     }
 }
@@ -114,11 +118,11 @@ header {
     align-items: center;
     gap: var(--gap-100);
     box-sizing: border-box;
-    z-index: 5;
+    z-index: 2;
     background-color: #00000088;
     border-radius: 0.6rem;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         max-width: 100%;
         border-radius: 0;
     }
@@ -142,7 +146,7 @@ header {
 /* CLASSES */
 
 #classes .three-col-row {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         width: 100%;
         grid-template-columns: 1fr;
     }
@@ -158,17 +162,16 @@ header {
     gap: var(--gap-400);
     background-color: var(--clr-accent-l);
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
         flex-direction: column;
-        gap: 0;
     }
 }
 
-#benefits > img {
+#benefits img {
     width: 35rem;
 
-    @media screen and (max-width: 425px) {
-        width: 100%;
+    @media screen and (max-width: 426px) {
+        max-width: 100%;
     }
 }
 

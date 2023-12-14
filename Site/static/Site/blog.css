@@ -1,0 +1,27 @@
+@import url("main.css");
+
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 2rem;
+    padding: 0;
+}
+
+#blog {
+    margin-top: 0;
+}
+
+#blog .pars-div {
+    width: fit-content;
+    padding: 2rem;
+    border: solid 0.15rem var(--clr-accent-d);
+    border-radius: 0.6rem;
+}
+
